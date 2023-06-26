@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider_sample/styles/app_color.dart';
+import 'package:provider_sample/styles/app_colors.dart';
 
 class Todo {
   const Todo({

@@ -57,6 +57,4 @@ class AppColors {
     100: Color(0xFF33323F),
   });
   static const int _neutralPrimary = 0xFFA9A8B5;
-
-
 }

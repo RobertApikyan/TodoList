@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider_sample/main.dart';
+import 'package:provider_sample/styles/app_colors.dart';
 import 'package:provider_sample/todo_create.dart';
 import 'package:provider_sample/todo_item.dart';
 import 'package:provider_sample/todo_model.dart';
@@ -53,7 +55,15 @@ class TodoScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => Scaffold(
-        appBar: AppBar(title: const Text('TODO List')),
+        appBar: AppBar(title: const Text('TODO List'), actions: [
+          CupertinoSwitch(
+            activeColor: AppColors.blue[40],
+            trackColor: AppColors.black,
+            value: ref.watch(themeProvider) == ThemeMode.light,
+            onChanged: (value) => ref.read(themeProvider.notifier).state =
+                value ? ThemeMode.light : ThemeMode.dark,
+          )
+        ]),
         body: ref.watch(todoVmsProvider).when(
               data: (data) => _dataContent(context, ref, data),
               error: (error, stackTrace) => errorBuilder(context),
