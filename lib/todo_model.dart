@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider_sample/styles/app_color.dart';
 
 class Todo {
   const Todo({
@@ -27,7 +28,7 @@ class TodoViewModel {
   TodoViewModel(this.model)
       : name = model.name,
         backgroundColor =
-            model.isDone ? Colors.lightGreen[100]! : Colors.blue[100]!;
+            model.isDone ? AppColors.selectedCardColor : AppColors.white;
 
   final Todo model;
   final String name;

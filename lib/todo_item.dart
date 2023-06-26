@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider_sample/todo_model.dart';
 
 class TodoItem extends StatelessWidget {
+
   const TodoItem({
     required this.viewModel,
     this.onChanged,
