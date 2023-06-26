@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider_sample/styles/app_colors.dart';
+import 'package:provider_sample/styles/app_theme_extensions.dart';
 
 class Todo {
   const Todo({
@@ -25,13 +26,12 @@ class Todo {
 }
 
 class TodoViewModel {
-
-  TodoViewModel(this.model)
-      : name = model.name,
-        backgroundColor =
-            model.isDone ? AppColors.blue[20] : AppColors.black[0];
+  TodoViewModel(this.model) : name = model.name;
 
   final Todo model;
   final String name;
-  final Color backgroundColor;
+
+  Color backgroundColor(BuildContext context) => model.isDone
+      ? context.appThemeExtensions.listItemSelectedBackgroundColor
+      : context.appThemeExtensions.listItemBackgroundColor;
 }
