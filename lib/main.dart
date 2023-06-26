@@ -18,15 +18,14 @@ class App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       theme: ThemeData(
-          primaryColor: AppColors.primaryColor,
-          appBarTheme:
-              const AppBarTheme(backgroundColor: AppColors.primaryColor),
-          scaffoldBackgroundColor: AppColors.backgroundColor,
+          primaryColor: AppColors.blue,
+          appBarTheme: const AppBarTheme(backgroundColor: AppColors.blue),
+          scaffoldBackgroundColor: AppColors.neutral[0],
           checkboxTheme: CheckboxThemeData(
-              checkColor: MaterialStateProperty.all(AppColors.white),
-              fillColor: MaterialStateProperty.all(AppColors.selectedCheckboxColor)),
+              checkColor: MaterialStateProperty.all(AppColors.black[0]),
+              fillColor: MaterialStateProperty.all(AppColors.blue[80])),
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
-              backgroundColor: AppColors.primaryColor)),
+              backgroundColor: AppColors.blue)),
       home: const TodoScreen(),
     );
   }

@@ -25,10 +25,11 @@ class Todo {
 }
 
 class TodoViewModel {
+
   TodoViewModel(this.model)
       : name = model.name,
         backgroundColor =
-            model.isDone ? AppColors.selectedCardColor : AppColors.white;
+            model.isDone ? AppColors.blue[20] : AppColors.black[0];
 
   final Todo model;
   final String name;
