@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider_sample/main.dart';
 import 'package:provider_sample/styles/app_colors.dart';
+import 'package:provider_sample/styles/app_theme_extensions.dart';
 import 'package:provider_sample/todo_create.dart';
 import 'package:provider_sample/todo_item.dart';
 import 'package:provider_sample/todo_model.dart';
@@ -54,7 +55,8 @@ class TodoScreen extends ConsumerWidget {
   const TodoScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) => Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
         appBar: AppBar(title: const Text('TODO List'), actions: [
           CupertinoSwitch(
             activeColor: AppColors.blue[40],
@@ -76,6 +78,7 @@ class TodoScreen extends ConsumerWidget {
               .onCreateTodoPressed(context),
         ),
       );
+  }
 
   Widget _dataContent(
       BuildContext context, WidgetRef ref, List<TodoViewModel> vms) {
